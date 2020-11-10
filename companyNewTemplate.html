@@ -191,30 +191,33 @@
       font-size: 150px;
     }
   }
-  @media only screen and(max-width: 600px)
-  {
-      td img{
-          width: 100px;
-          height: 100px;
-          margin: 2px;
-          transition: transform .2s;
-          cursor: pointer;
-      }
-  }
-  td img{
-                width: 200px;
-                height: 200px;
-                margin: 5px;
-                transition: transform .2s;
-                cursor: pointer;
-            }
-            .image-row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+  #companyLogo{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: inline;
 }
 
+  @media only screen and(max-width: 800px)
+  {
+      #companyLogo{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline;
+      }
+  }
+  
+  .image-row {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0 4px;
+  }
+
 /* Create four equal columns that sits next to each other */
+img{
+  cursor: pointer;
+}
 .image-column {
   flex: 25%;
   max-width: 25%;
@@ -242,6 +245,35 @@
     max-width: 100%;
   }
 }
+.image-column img{
+    transition: transform .2s;  
+}
+.image-column img:hover{
+  transform: scale(1.5);
+}
+#overlay{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#overlayImage{
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -255,7 +287,8 @@
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#myPage">
-        Rich <span style = "color: #5cb85c;">Plant</span></a>
+        <img src = "Images/f6fde12f-9d96-4536-bf6d-fbb919706b79.jpg" id = "companyLogo">
+        </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -266,11 +299,16 @@
     </div>
   </div>
 </nav>
+<div id = "overlay">
+  <div id = "overlayDiv">
+    <img id = "overlayImage" src = "#">
+  </div>
+</div>
 
 <div class="jumbotron text-center" style = "width: 100%;">
   <h1>Rich <span style = "color: #5cb85c;">Plant</span></h1> 
   <p>We specialize in Importing, Exporting & Supplies</p> 
-  <strong>Manager:  Shaymaa Ali</strong>
+  <strong>Owner:  Shaymaa Ali</strong>
 </div>
 
 <!-- Container (About Section) -->
@@ -279,7 +317,7 @@
     <div class="col-sm-8">
       <h2>About Rich <span style = "color: #5cb85c;">Plant</span></h2><br>
       <p>Rich Plant is a company that specializes in Importing, Exporting and Suppling.<br>
-        The company is managed by <strong>Shaymaa Ali</strong>.<br>We are located in Oakland, California.</p>
+        The company is owned by <strong>Shaymaa Ali</strong>.<br>We are located in Lake Butler, Florida.</p>
     </div>
     <div class="col-sm-4">
         <span class="glyphicon glyphicon-globe logo" style = "color: #5cb85c"></span>
@@ -357,7 +395,7 @@
   <div class="row text-center" style = "font-size: 20px;">
     <div class="col">
       <p>Contact us for any question</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> 2787 E Oakland Park BLVD Suite 204,<br> FL Lauderdale FL 33306</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> 15367 West State Road 100<br> Lake Butler FL 32054</p>
       <p><span class="glyphicon glyphicon-phone"></span> 407-873-0820</p>
       <p><span class="glyphicon glyphicon-envelope"></span> rich.plants.2021@gmail.com</p>
       <p><span class = "fa fa-facebook-square" style = "font-size: 30px;">
@@ -413,7 +451,18 @@ $(document).ready(function(){
 })
 </script>
 <script>
-
+  document.querySelector(".image-row").addEventListener("click", (event) => {
+    document.querySelector("#overlayImage").src = event.target.src;
+    document.querySelector("#overlay").style.display = "block";
+  });
+  document.querySelector("#overlay").addEventListener("click", () => {
+    document.querySelector("#overlay").style.display = "none";
+  });
+  document.querySelector("#companyLogo").addEventListener("click", () => {
+    document.querySelector("#overlayImage").src = document.querySelector("#companyLogo").src;
+    document.querySelector("#overlay").style.display = "block";
+    
+  });
 </script>
 </body>
 </html>
