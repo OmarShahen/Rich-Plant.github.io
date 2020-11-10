@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #292b2c;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    width: 100%;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #292b2c;
+    font-size: 50px;
+  }
+  .logo {
+    color: #292b2c;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #292b2c;
+  }
+  .carousel-indicators li {
+    border-color: #292b2c;
+  }
+  .carousel-indicators li.active {
+    background-color: #292b2c;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #292b2c; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #292b2c;
+    background-color: #fff !important;
+    color: #292b2c;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #292b2c;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #292b2c;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #292b2c !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #292b2c;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  @media only screen and(max-width: 600px)
+  {
+      td img{
+          width: 100px;
+          height: 100px;
+          margin: 2px;
+          transition: transform .2s;
+          cursor: pointer;
+      }
+  }
+  td img{
+                width: 200px;
+                height: 200px;
+                margin: 5px;
+                transition: transform .2s;
+                cursor: pointer;
+            }
+            .image-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.image-column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.image-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .image-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .image-column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top" >
+  <div class="container" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">Images</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center" style = "width: 100%;">
+  <h1>Rich <span style = "color: #5cb85c;">Plant</span></h1> 
+  <p>We specialize in Importing, Exporting & Supplies</p> 
+  <strong>Manager:  Shaymaa Ali</strong>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Rich <span style = "color: #5cb85c;">Plant</span></h2><br>
+      <p>Rich Plant is a company that is specialized in Importing, Exporting and Suppling.<br>
+        The company is managed by <strong>Shaymaa Ali</strong>.<br>We are located in Oakland, California.</p>
+    </div>
+    <div class="col-sm-4">
+        <span class="glyphicon glyphicon-globe logo" style = "color: #5cb85c"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey" style = "margin-left: auto;margin-right: auto;">
+    <table style = "margin-left: auto;margin-right: auto;">
+        <tr>
+            <td>
+            <img src = "Images/056fa2b5-faff-4048-84ba-8d9d31f6a2e0.jpg">
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/15b11aaf-b081-49f5-8d94-e779fe47043f.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/1e30b1f9-5b74-4477-8f91-3f8b97a52a99.jpg">
+                </a>
+                
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/48f36e9e-347e-4585-b09d-185fc05798a8.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/5e8a8982-ffc9-4822-a203-ffe308827dac.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/683df8dc-58df-4712-97ea-cec2c01153cc.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/5872139e-7d8e-4a97-a5da-2c0802ef8507.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/5f62beac-c422-4b04-b33d-c2532507222a.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/67f92db9-fcfd-4eb0-a0f7-06a4643beee6.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/6a319fda-2a9d-444c-b41c-58c4c6bfbad8.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/70a478aa-77b5-4812-afeb-28e94e38de34.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/87c335b9-ee66-4343-b1d1-337899add0f6.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/952665fd-4ce1-4409-a8a7-dd0ada78f4ff.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/9d43e303-79d0-411c-9426-cea7fa80441b.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/9e9acdcf-6e31-47ba-b6e5-9dc714456ca1.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/91f0628d-97c4-4d91-9c0f-5e91ebaa7d24.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/a977ca27-1978-458b-a27c-4235d0218346.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/e146e10a-6f36-410a-9bf5-96193665840b.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/d101a7be-98e9-4af6-95b1-75599b51099e.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/d93bbf78-6ca3-4c56-8ef0-81652c617825.jpg">
+                </a>
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/deeac87c-5e82-4c9a-9740-34862a1b74e7.jpg">
+                </a>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href = "#">
+                    <img src = "Images/e9ce926f-0bdd-4a0b-8c7f-90096440536b.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/eee85f66-6c7f-4bb3-b4d2-bca6fe96e77e.jpg">
+                </a>
+                
+            </td>
+            <td>
+                <a href = "#">
+                    <img src = "Images/fc6f278b-bb5a-4b26-a853-f701d49417df.jpg">
+                </a>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<script>
+
+</script>
+</body>
+</html>
