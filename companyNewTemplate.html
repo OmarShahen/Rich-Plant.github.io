@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>Rich Plant</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" href = "https://unpkg.com/aos@2.3.0/dist/aos.css">
+  <script src = "https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
   <style>
   body {
     font: 400 15px Lato, sans-serif;
@@ -314,13 +316,13 @@ img{
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8" data-aos = "fade-left">
       <h2>About Rich <span style = "color: #5cb85c;">Plant</span></h2><br>
       <p>Rich Plant is a company that specializes in Importing, Exporting and Suppling.<br>
         The company is owned by <strong>Shaymaa Ali</strong>.<br>We are located in Lake Butler, Florida.</p>
     </div>
     <div class="col-sm-4">
-        <span class="glyphicon glyphicon-globe logo" style = "color: #5cb85c"></span>
+        <span class="glyphicon glyphicon-globe logo" style = "color: #5cb85c" data-aos = "fade-left"></span>
     </div>
   </div>
 </div>
@@ -393,7 +395,7 @@ img{
 <div id="contact" class="container-fluid bg-grey" style = "margin-top: 20px;margin-left: 10px;margin-right: 10px;">
   <h2>CONTACT US</h2>
   <div class="row text-center" style = "font-size: 20px;">
-    <div class="col">
+    <div class="col" data-aos = "fade-right">
       <p>Contact us for any question</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> 15367 West State Road 100<br> Lake Butler FL 32054</p>
       <p><span class="glyphicon glyphicon-phone"></span> 407-873-0820</p>
@@ -463,6 +465,9 @@ $(document).ready(function(){
     document.querySelector("#overlay").style.display = "block";
     
   });
+</script>
+<script>
+    AOS.init({duration: 1200,})
 </script>
 </body>
 </html>
